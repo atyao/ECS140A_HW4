@@ -2,3 +2,4 @@
 
 public abstract class Seq {
 }
+
