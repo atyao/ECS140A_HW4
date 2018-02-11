@@ -16,6 +16,7 @@ public class Main {
         Fib b4 = new Fib(2, 2, 0);
         Fib b5 = new Fib(0, -1, -10);
         Fib b6 = new Fib(-2, -3, -10);
+        countOut();
         // do everything twice just to double check
         for( int i = 0; i < 2; i++) {
             
@@ -135,6 +136,12 @@ public class Main {
              System.out.println( "(Seq)x instanceof For" + ":" + ((Seq)x instanceof For) + ":"); 
              System.out.println( "(Seq)x instanceof Fib" + ":" + ((Seq)x instanceof Fib) + ":"); 
              System.out.println( "x.upperBound()" + ":" + (x.upperBound()) + ":");
+        countOut();
         System.exit(0);
+    }
+    private static void countOut() {
+        System.out.println( "created " + Seq.getCount() + " Seq");
+        System.out.println( "created " + For.getCount() + " For");
+        System.out.println( "created " + Fib.getCount() + " Fib");
     }
 }
