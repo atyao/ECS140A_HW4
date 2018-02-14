@@ -2,10 +2,15 @@ public class Fib extends Seq{
 	protected int firstOne;
 	protected int firstTwo;
 	protected int last1;
+	private static int counter = 0;
+	public static int getCount(){
+		return counter;
+	};
 	public Fib(int first1, int first2, int last){
 		this.firstOne = first1;
 		this.firstTwo = first2;
 		this.last1 = last;
+		counter++;
 
 	}
 
