@@ -1,3 +1,3 @@
-public interface class SeqIt {
-    
+public interface SeqIt {
+    int next();
 }
