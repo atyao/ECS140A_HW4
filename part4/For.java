@@ -2,6 +2,7 @@ public class For extends Seq{
 	protected int first1;
 	protected int last1;
 	protected int step1;
+	protected int sum1;
 	private static int counter = 0;
 	public static int getCount(){
 		return counter;

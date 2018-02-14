@@ -253,7 +253,7 @@ myprintb(c1,10):0 -1 -1 -2 -3 -5 -8 -13 -21 -34 :
 myprintb(c2,10):0 0 0 0 0 0 0 0 0 0 :
 myprintb(c3,10)::
 myprintb(c4,10):0 0 0 0 0 0 0 0 0 0 :
-myprintb(c5,10):0 1 1 :
+myprintb(c5,10):0 :
 myprintb(c6,10):0 -1 -1 -2 -3 -5 -8 -13 -21 -34 :
 myprintb(c7,10):1 0 1 1 2 3 5 8 :
 myprintb(c8,10):-1 0 -1 -1 -2 -3 -5 -8 -13 -21 :
@@ -537,14 +537,14 @@ si.next():2:
 si.next():3:
 si.next():1:
 si.next():2:
-ForUser.sum1(r1):0:
+ForUser.sum1(r1):3:
 ForUser.sum1(r2):0:
-ForUser.sum1(r3):0:
-ForUser.sum1(r4):0:
-ForUser.sum1(r5):0:
+ForUser.sum1(r3):66:
+ForUser.sum1(r4):69:
+ForUser.sum1(r5):69:
 ForUser.sum1(r7):0:
 ForUser.sum1(r8):0:
-ForUser.sum1(s7):0:
+ForUser.sum1(s7):26:
 created 28 Seq
 created 10 For
 created 18 Fib

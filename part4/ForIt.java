@@ -1,4 +1,5 @@
 public class ForIt implements SeqIt {
+    For forRef;
     private Dir direction;
     private enum Dir {
         POSITIVE,
@@ -27,12 +28,16 @@ public class ForIt implements SeqIt {
         stepNum = inFor.step1;
 
         curNum = initNum;
+
+        forRef = inFor;
+        forRef.sum1 = 0;
     }
 
     public int next() {
         curNum = initNum + (stepNum * count);
         count++;
 
+        forRef.sum1 += curNum;
         return curNum;
     }
 
