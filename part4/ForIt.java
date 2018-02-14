@@ -1,11 +1,13 @@
+// Iterates through the for loop
 public class ForIt implements SeqIt {
-    For forRef;
+    // Determines direction for loop is iterating
     private Dir direction;
     private enum Dir {
         POSITIVE,
         NEGATIVE,
         ZERO
     }
+
     int initNum = 0;
     int endNum = 0;
     int stepNum = 0;
@@ -14,8 +16,8 @@ public class ForIt implements SeqIt {
     int count = 0;
 
     public ForIt(For inFor) {
+        // Check if step is negative or positive
         int stepDir = inFor.step1;
-
         if (stepDir > 0)
             direction = Dir.POSITIVE;
         else if (stepDir < 0)
@@ -23,17 +25,16 @@ public class ForIt implements SeqIt {
         else
             direction = Dir.ZERO;
 
+        // Copy values to class
         initNum = inFor.first1;
         endNum = inFor.last1;
         stepNum = inFor.step1;
-
         curNum = initNum;
-
-        forRef = inFor;
-        forRef.sum1 = 0;
     }
 
+    // Iterate through loop by one step
     public int next() {
+        // Check if for loop will go past the end number
         if (!(hasNext())) {
             System.err.println("ForIt called past end");
             System.exit(1);
@@ -42,10 +43,10 @@ public class ForIt implements SeqIt {
         curNum = initNum + (stepNum * count);
         count++;
 
-        forRef.sum1 += curNum;
         return curNum;
     }
 
+    // Check if there is a next element in the loop
     public boolean hasNext() {
         switch (direction) {
             case POSITIVE:

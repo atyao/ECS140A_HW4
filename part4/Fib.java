@@ -1,3 +1,4 @@
+// Iterate through the fib sequence
 public class Fib extends Seq{
 	protected int firstOne;
 	protected int firstTwo;
