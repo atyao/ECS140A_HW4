@@ -40,7 +40,7 @@ public class FibIt implements  SeqIt {
         return newCur;
     }
 
-    // Check if there is a next element in the loop
+    // Check if there is a next element in the sequence
     public boolean hasNext() {
         if (cur1 == last && count == 0)
             return true;
