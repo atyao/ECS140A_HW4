@@ -1,6 +1,31 @@
 /* *** This file is given as part of the programming assignment. *** */
 public class Main {
     public static void main(String [] args) {
+        if( args.length > 0 ) {
+  System.out.println("test of calling "+args[0]
+               +" too many times");
+         if( args[0].equals("FibIt") ) {
+          FibIt fi = new FibIt(new Fib(2, 2, 10));
+      System.out.println( "fi.next()" + ":" + (fi.next()) + ":");
+      System.out.println( "fi.next()" + ":" + (fi.next()) + ":");
+      System.out.println( "fi.next()" + ":" + (fi.next()) + ":");
+      System.out.println( "fi.next()" + ":" + (fi.next()) + ":");
+      System.out.println( "fi.next()" + ":" + (fi.next()) + ":");
+      System.out.println( "fi.next()" + ":" + (fi.next()) + ":");
+                }
+         else if( args[0].equals("ForIt") ) {
+          ForIt fi = new ForIt(new For(3, 8, 2));
+      System.out.println( "fi.next()" + ":" + (fi.next()) + ":");
+      System.out.println( "fi.next()" + ":" + (fi.next()) + ":");
+      System.out.println( "fi.next()" + ":" + (fi.next()) + ":");
+      System.out.println( "fi.next()" + ":" + (fi.next()) + ":");
+                }
+         else {
+      System.err.println("args[0] Oops "+args[0]);
+      System.exit(3);
+                }
+  System.exit(2); // should exit before this one.
+ }
         // instantiate some elements
  For r1 = new For(1, 4, 1);
         For r2 = new For(1, 4, -1);
@@ -374,42 +399,11 @@ public class Main {
              System.out.println(":");
         // test virtualness
  SeqIt si = new FibIt(b1);
- try {
-     System.out.println( "si.next()" + ":" + (si.next()) + ":");
-     System.out.println( "si.next()" + ":" + (si.next()) + ":");
-     si = new ForIt(r1);
-     System.out.println( "si.next()" + ":" + (si.next()) + ":");
-     System.out.println( "si.next()" + ":" + (si.next()) + ":");
-        }
-        catch (UsingIteratorPastEndException e) {
-            System.out.println("oops1! caught UsingIteratorPastEndException");
- }
-        try {
-     System.out.println("test of calling FibIt"
-           +" too many times");
-         FibIt fi = new FibIt(new Fib(2, 2, 10));
-     System.out.println( "fi.next()" + ":" + (fi.next()) + ":");
-     System.out.println( "fi.next()" + ":" + (fi.next()) + ":");
-     System.out.println( "fi.next()" + ":" + (fi.next()) + ":");
-     System.out.println( "fi.next()" + ":" + (fi.next()) + ":");
-     System.out.println( "fi.next()" + ":" + (fi.next()) + ":");
-     System.out.println( "fi.next()" + ":" + (fi.next()) + ":");
-        }
-        catch (UsingIteratorPastEndException e) {
-            System.out.println("= caught UsingIteratorPastEndException from FibIt");
- }
- try {
-     System.out.println("test of calling ForIt"
-           +" too many times");
-         ForIt fi = new ForIt(new For(3, 8, 2));
-     System.out.println( "fi.next()" + ":" + (fi.next()) + ":");
-     System.out.println( "fi.next()" + ":" + (fi.next()) + ":");
-     System.out.println( "fi.next()" + ":" + (fi.next()) + ":");
-     System.out.println( "fi.next()" + ":" + (fi.next()) + ":");
-        }
-        catch (UsingIteratorPastEndException e) {
-            System.out.println("= caught UsingIteratorPastEndException from ForIt");
- }
+ System.out.println( "si.next()" + ":" + (si.next()) + ":");
+ System.out.println( "si.next()" + ":" + (si.next()) + ":");
+ si = new ForIt(r1);
+ System.out.println( "si.next()" + ":" + (si.next()) + ":");
+ System.out.println( "si.next()" + ":" + (si.next()) + ":");
  System.out.println( "ForUser.sum1(r1)" + ":" + (ForUser.sum1(r1)) + ":");
  System.out.println( "ForUser.sum1(r2)" + ":" + (ForUser.sum1(r2)) + ":");
  System.out.println( "ForUser.sum1(r3)" + ":" + (ForUser.sum1(r3)) + ":");
@@ -418,158 +412,6 @@ public class Main {
  System.out.println( "ForUser.sum1(r7)" + ":" + (ForUser.sum1(r7)) + ":");
  System.out.println( "ForUser.sum1(r8)" + ":" + (ForUser.sum1(r8)) + ":");
  System.out.println( "ForUser.sum1(s7)" + ":" + (ForUser.sum1(s7)) + ":");
- System.out.println( "ForUser.sum2(r1)" + ":" + (ForUser.sum2(r1)) + ":");
- System.out.println( "ForUser.sum2(r2)" + ":" + (ForUser.sum2(r2)) + ":");
- System.out.println( "ForUser.sum2(r3)" + ":" + (ForUser.sum2(r3)) + ":");
- System.out.println( "ForUser.sum2(r4)" + ":" + (ForUser.sum2(r4)) + ":");
- System.out.println( "ForUser.sum2(r5)" + ":" + (ForUser.sum2(r5)) + ":");
- System.out.println( "ForUser.sum2(r7)" + ":" + (ForUser.sum2(r7)) + ":");
- System.out.println( "ForUser.sum2(r8)" + ":" + (ForUser.sum2(r8)) + ":");
- System.out.println( "ForUser.sum2(s7)" + ":" + (ForUser.sum2(s7)) + ":");
-        // test better way to create iterators and test virtualness
- si = r1.createSeqIt();
- try {
-     System.out.println( "si.next()" + ":" + (si.next()) + ":");
-     System.out.println( "si.next()" + ":" + (si.next()) + ":");
- }
-        catch (UsingIteratorPastEndException e) {
-            System.out.println("oops2! caught UsingIteratorPastEndException");
- }
- si = b3.createSeqIt();
- try {
-     System.out.println( "si.next()" + ":" + (si.next()) + ":");
-     System.out.println( "si.next()" + ":" + (si.next()) + ":");
-     System.out.println( "si.next()" + ":" + (si.next()) + ":");
-     System.out.println( "si.next()" + ":" + (si.next()) + ":");
-     System.out.println( "si.next()" + ":" + (si.next()) + ":");
- }
-        catch (UsingIteratorPastEndException e) {
-            System.out.println("oops3! caught UsingIteratorPastEndException");
- }
-        // now to do myprint the right way
-        System.out.print( "myprint(r1,10)" + ":"); 
-             myprint(r1,10); 
-             System.out.println(":");
-        System.out.print( "myprint(r2,10)" + ":"); 
-             myprint(r2,10); 
-             System.out.println(":");
-        System.out.print( "myprint(r3,10)" + ":"); 
-             myprint(r3,10); 
-             System.out.println(":");
-        System.out.print( "myprint(r4,10)" + ":"); 
-             myprint(r4,10); 
-             System.out.println(":");
-        System.out.print( "myprint(r5,10)" + ":"); 
-             myprint(r5,10); 
-             System.out.println(":");
-        System.out.print( "myprint(s6,10)" + ":"); 
-             myprint(s6,10); 
-             System.out.println(":");
-        System.out.print( "myprint(s7,10)" + ":"); 
-             myprint(s7,10); 
-             System.out.println(":");
-        System.out.print( "myprint(b1,10)" + ":"); 
-             myprint(b1,10); 
-             System.out.println(":");
-        System.out.print( "myprint(b2,10)" + ":"); 
-             myprint(b2,10); 
-             System.out.println(":");
-        System.out.print( "myprint(b3,10)" + ":"); 
-             myprint(b3,10); 
-             System.out.println(":");
-        System.out.print( "myprint(b4,10)" + ":"); 
-             myprint(b4,10); 
-             System.out.println(":");
-        System.out.print( "myprint(b5,10)" + ":"); 
-             myprint(b5,10); 
-             System.out.println(":");
-        System.out.print( "myprint(b6,10)" + ":"); 
-             myprint(b6,10); 
-             System.out.println(":");
-        System.out.print( "myprint(b7,10)" + ":"); 
-             myprint(b7,10); 
-             System.out.println(":");
-        System.out.print( "myprint(b8,10)" + ":"); 
-             myprint(b8,10); 
-             System.out.println(":");
-        System.out.print( "myprint(b9,10)" + ":"); 
-             myprint(b9,10); 
-             System.out.println(":");
-        // now do mycross the right way
-        // same cross tests as above, plus some extra mixed tests
-        System.out.print( "mycross(r1,r3)" + ":"); 
-             mycross(r1,r3); 
-             System.out.println(":");
-        System.out.print( "mycross(r1,r1)" + ":"); 
-             mycross(r1,r1); 
-             System.out.println(":");
-        System.out.print( "mycross(r3,r3)" + ":"); 
-             mycross(r3,r3); 
-             System.out.println(":");
-        System.out.print( "mycross(r3,r3)" + ":"); 
-             mycross(r3,r3); 
-             System.out.println(":");
-        System.out.print( "mycross(r1,r2)" + ":"); 
-             mycross(r1,r2); 
-             System.out.println(":");
-        System.out.print( "mycross(r2,r2)" + ":"); 
-             mycross(r2,r2); 
-             System.out.println(":");
-        System.out.print( "mycross(s7,r4)" + ":"); 
-             mycross(s7,r4); 
-             System.out.println(":");
-        System.out.print( "mycross(b1,b3)" + ":"); 
-             mycross(b1,b3); 
-             System.out.println(":");
-        System.out.print( "mycross(b3,b1)" + ":"); 
-             mycross(b3,b1); 
-             System.out.println(":");
-        System.out.print( "mycross(b1,b1)" + ":"); 
-             mycross(b1,b1); 
-             System.out.println(":");
-        System.out.print( "mycross(b8,b1)" + ":"); 
-             mycross(b8,b1); 
-             System.out.println(":");
-        System.out.print( "mycross(b1,b8)" + ":"); 
-             mycross(b1,b8); 
-             System.out.println(":");
-        System.out.print( "mycross(b2,b3)" + ":"); 
-             mycross(b2,b3); 
-             System.out.println(":");
-        System.out.print( "mycross(b3,b2)" + ":"); 
-             mycross(b3,b2); 
-             System.out.println(":");
-        System.out.print( "mycross(b1,b5)" + ":"); 
-             mycross(b1,b5); 
-             System.out.println(":");
-        System.out.print( "mycross(b4,b5)" + ":"); 
-             mycross(b4,b5); 
-             System.out.println(":");
-        // new mixed tests
-        System.out.print( "mycross(r1,b1)" + ":"); 
-             mycross(r1,b1); 
-             System.out.println(":");
-        System.out.print( "mycross(b1,r1)" + ":"); 
-             mycross(b1,r1); 
-             System.out.println(":");
-        System.out.print( "mycross(s7,b4)" + ":"); 
-             mycross(s7,b4); 
-             System.out.println(":");
-        System.out.print( "mycross(b4,s7)" + ":"); 
-             mycross(b4,s7); 
-             System.out.println(":");
-        System.out.print( "mycross(r2,b8)" + ":"); 
-             mycross(r2,b8); 
-             System.out.println(":");
-        System.out.print( "mycross(b8,r2)" + ":"); 
-             mycross(b8,r2); 
-             System.out.println(":");
-        System.out.print( "mycross(r3,b2)" + ":"); 
-             mycross(r3,b2); 
-             System.out.println(":");
-        System.out.print( "mycross(b2,r3)" + ":"); 
-             mycross(b2,r3); 
-             System.out.println(":");
         countOut();
         System.exit(0);
     }
@@ -582,44 +424,29 @@ public class Main {
  ForIt ri = new ForIt(r);
         int count = 0;
         while( ++count <= num && ri.hasNext() ) {
-     try {
-         System.out.print(ri.next() + " ");
-            }
-            catch (UsingIteratorPastEndException e) {
-                System.out.println("myprintr oops! caught UsingIteratorPastEndException");
-     }
+     System.out.print(ri.next() + " ");
  }
     }
     private static void myprintb(Fib b, int num) {
  FibIt bi = new FibIt(b);
         int count = 0;
         while( ++count <= num && bi.hasNext() ) {
-     try {
-         System.out.print(bi.next() + " ");
-            }
-            catch (UsingIteratorPastEndException e) {
-                System.out.println("myprintb oops! caught UsingIteratorPastEndException");
-     }
+     System.out.print(bi.next() + " ");
  }
     }
     private static void mycrossr(For r1, For r2) {
  ForIt ri1 = new ForIt(r1);
  boolean first = true;
  while ( ri1.hasNext() ) {
-     try {
-         int p1 = ri1.next();
-                ForIt ri2 = new ForIt(r2);
-         while ( ri2.hasNext() ) {
-      int p2 = ri2.next();
-      if ( first ) {
-          first = false;
-          System.out.println();
-      }
-      System.out.println("   " + p1 + " " + p2);
-         }
-            }
-            catch (UsingIteratorPastEndException e) {
-                System.out.println("mycrossr oops! caught UsingIteratorPastEndException");
+     int p1 = ri1.next();
+            ForIt ri2 = new ForIt(r2);
+     while ( ri2.hasNext() ) {
+  int p2 = ri2.next();
+  if ( first ) {
+      first = false;
+      System.out.println();
+  }
+  System.out.println("   " + p1 + " " + p2);
      }
  }
     }
@@ -627,54 +454,16 @@ public class Main {
  FibIt bi1 = new FibIt(b1);
  boolean first = true;
  while ( bi1.hasNext() ) {
-     try {
-         int p1 = bi1.next();
-                FibIt bi2 = new FibIt(b2);
-         while ( bi2.hasNext() ) {
-      int p2 = bi2.next();
-      if ( first ) {
-          first = false;
-          System.out.println();
-      }
-      System.out.println("   " + p1 + " " + p2);
+     int p1 = bi1.next();
+            FibIt bi2 = new FibIt(b2);
+     while ( bi2.hasNext() ) {
+  int p2 = bi2.next();
+  if ( first ) {
+      first = false;
+      System.out.println();
   }
-     }
-            catch (UsingIteratorPastEndException e) {
-                System.out.println("mycrossb oops! caught UsingIteratorPastEndException");
+  System.out.println("   " + p1 + " " + p2);
      }
  }
-    }
-    private static void myprint(Seq s, int num) {
-        SeqIt si = s.createSeqIt();
-        int count = 0;
-        while( ++count <= num && si.hasNext() ) {
-     try {
-                System.out.print(si.next() + " ");
-     }
-            catch (UsingIteratorPastEndException e) {
-                System.out.println("myprint oops! caught UsingIteratorPastEndException");
-     }
-        }
-    }
-    private static void mycross(Seq s1, Seq s2) {
-        SeqIt si1 = s1.createSeqIt();
-        boolean first = true;
-        while ( si1.hasNext() ) {
-     try {
-                int p1 = si1.next();
-                SeqIt si2 = s2.createSeqIt();
-                while ( si2.hasNext() ) {
-                    int p2 = si2.next();
-                    if ( first ) {
-                        first = false;
-                        System.out.println();
-                    }
-                   System.out.println("   " + p1 + " " + p2);
-                }
-     }
-            catch (UsingIteratorPastEndException e) {
-                System.out.println("mycross oops! caught UsingIteratorPastEndException");
-     }
-        }
     }
 }
