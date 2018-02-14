@@ -1,8 +1,8 @@
 // Iterates through the fib sequence
 public class FibIt implements  SeqIt {
-    int cur1 = 0;
-    int cur2 = 0;
-    int last = 0;
+    private int cur1 = 0;
+    private int cur2 = 0;
+    private int last = 0;
 
     // Used for the first two elements
     int count = 0;
@@ -13,8 +13,9 @@ public class FibIt implements  SeqIt {
         last = inFib.last1;
     }
 
+
     // Iterate to next fibonacci sequence element
-    public int next() {
+    public int next() throws UsingIteratorPastEndException{
         // Check if fib will go past the end number
         if (!(hasNext())) {
             System.err.println("FibIt called past end");
