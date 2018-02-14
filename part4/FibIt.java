@@ -12,6 +12,10 @@ public class FibIt implements  SeqIt {
     }
 
     public int next() {
+        if (!(hasNext())) {
+            System.err.println("FibIt called past end");
+            System.exit(1);
+        }
         if (count == 0) {
             count++;
             return cur1;

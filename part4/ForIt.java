@@ -34,6 +34,11 @@ public class ForIt implements SeqIt {
     }
 
     public int next() {
+        if (!(hasNext())) {
+            System.err.println("ForIt called past end");
+            System.exit(1);
+        }
+
         curNum = initNum + (stepNum * count);
         count++;
 

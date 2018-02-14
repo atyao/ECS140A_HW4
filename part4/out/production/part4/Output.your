@@ -537,14 +537,14 @@ si.next():2:
 si.next():3:
 si.next():1:
 si.next():2:
-ForUser.sum1(r1):3:
+ForUser.sum1(r1):0:
 ForUser.sum1(r2):0:
-ForUser.sum1(r3):66:
-ForUser.sum1(r4):69:
-ForUser.sum1(r5):69:
+ForUser.sum1(r3):0:
+ForUser.sum1(r4):0:
+ForUser.sum1(r5):0:
 ForUser.sum1(r7):0:
 ForUser.sum1(r8):0:
-ForUser.sum1(s7):26:
+ForUser.sum1(s7):0:
 created 28 Seq
 created 10 For
 created 18 Fib
