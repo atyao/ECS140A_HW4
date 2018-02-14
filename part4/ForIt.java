@@ -14,30 +14,23 @@ public class ForIt implements SeqIt {
 
     public ForIt(For inFor) {
         int stepDir = inFor.step1;
+
         if (stepDir > 0)
             direction = Dir.POSITIVE;
         else if (stepDir < 0)
             direction = Dir.NEGATIVE;
         else
             direction = Dir.ZERO;
+
         initNum = inFor.first1;
         endNum = inFor.last1;
         stepNum = inFor.step1;
+
         curNum = initNum;
     }
 
     public int next() {
-        switch (direction) {
-            case POSITIVE:
-                if (curNum < endNum)
-                    curNum = initNum + (stepNum * count);
-                break;
-            case NEGATIVE:
-                if (curNum > endNum)
-                    curNum = initNum + (stepNum * count);
-                break;
-            default: break;
-        }
+        curNum = initNum + (stepNum * count);
         count++;
 
         return curNum;
