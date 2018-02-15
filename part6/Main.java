@@ -426,6 +426,150 @@ public class Main {
  System.out.println( "ForUser.sum2(r7)" + ":" + (ForUser.sum2(r7)) + ":");
  System.out.println( "ForUser.sum2(r8)" + ":" + (ForUser.sum2(r8)) + ":");
  System.out.println( "ForUser.sum2(s7)" + ":" + (ForUser.sum2(s7)) + ":");
+        // test better way to create iterators and test virtualness
+ si = r1.createSeqIt();
+ try {
+     System.out.println( "si.next()" + ":" + (si.next()) + ":");
+     System.out.println( "si.next()" + ":" + (si.next()) + ":");
+ }
+        catch (UsingIteratorPastEndException e) {
+            System.out.println("oops2! caught UsingIteratorPastEndException");
+ }
+ si = b3.createSeqIt();
+ try {
+     System.out.println( "si.next()" + ":" + (si.next()) + ":");
+     System.out.println( "si.next()" + ":" + (si.next()) + ":");
+     System.out.println( "si.next()" + ":" + (si.next()) + ":");
+     System.out.println( "si.next()" + ":" + (si.next()) + ":");
+     System.out.println( "si.next()" + ":" + (si.next()) + ":");
+ }
+        catch (UsingIteratorPastEndException e) {
+            System.out.println("oops3! caught UsingIteratorPastEndException");
+ }
+        // now to do myprint the right way
+        System.out.print( "myprint(r1,10)" + ":"); 
+             myprint(r1,10); 
+             System.out.println(":");
+        System.out.print( "myprint(r2,10)" + ":"); 
+             myprint(r2,10); 
+             System.out.println(":");
+        System.out.print( "myprint(r3,10)" + ":"); 
+             myprint(r3,10); 
+             System.out.println(":");
+        System.out.print( "myprint(r4,10)" + ":"); 
+             myprint(r4,10); 
+             System.out.println(":");
+        System.out.print( "myprint(r5,10)" + ":"); 
+             myprint(r5,10); 
+             System.out.println(":");
+        System.out.print( "myprint(s6,10)" + ":"); 
+             myprint(s6,10); 
+             System.out.println(":");
+        System.out.print( "myprint(s7,10)" + ":"); 
+             myprint(s7,10); 
+             System.out.println(":");
+        System.out.print( "myprint(b1,10)" + ":"); 
+             myprint(b1,10); 
+             System.out.println(":");
+        System.out.print( "myprint(b2,10)" + ":"); 
+             myprint(b2,10); 
+             System.out.println(":");
+        System.out.print( "myprint(b3,10)" + ":"); 
+             myprint(b3,10); 
+             System.out.println(":");
+        System.out.print( "myprint(b4,10)" + ":"); 
+             myprint(b4,10); 
+             System.out.println(":");
+        System.out.print( "myprint(b5,10)" + ":"); 
+             myprint(b5,10); 
+             System.out.println(":");
+        System.out.print( "myprint(b6,10)" + ":"); 
+             myprint(b6,10); 
+             System.out.println(":");
+        System.out.print( "myprint(b7,10)" + ":"); 
+             myprint(b7,10); 
+             System.out.println(":");
+        System.out.print( "myprint(b8,10)" + ":"); 
+             myprint(b8,10); 
+             System.out.println(":");
+        System.out.print( "myprint(b9,10)" + ":"); 
+             myprint(b9,10); 
+             System.out.println(":");
+        // now do mycross the right way
+        // same cross tests as above, plus some extra mixed tests
+        System.out.print( "mycross(r1,r3)" + ":"); 
+             mycross(r1,r3); 
+             System.out.println(":");
+        System.out.print( "mycross(r1,r1)" + ":"); 
+             mycross(r1,r1); 
+             System.out.println(":");
+        System.out.print( "mycross(r3,r3)" + ":"); 
+             mycross(r3,r3); 
+             System.out.println(":");
+        System.out.print( "mycross(r3,r3)" + ":"); 
+             mycross(r3,r3); 
+             System.out.println(":");
+        System.out.print( "mycross(r1,r2)" + ":"); 
+             mycross(r1,r2); 
+             System.out.println(":");
+        System.out.print( "mycross(r2,r2)" + ":"); 
+             mycross(r2,r2); 
+             System.out.println(":");
+        System.out.print( "mycross(s7,r4)" + ":"); 
+             mycross(s7,r4); 
+             System.out.println(":");
+        System.out.print( "mycross(b1,b3)" + ":"); 
+             mycross(b1,b3); 
+             System.out.println(":");
+        System.out.print( "mycross(b3,b1)" + ":"); 
+             mycross(b3,b1); 
+             System.out.println(":");
+        System.out.print( "mycross(b1,b1)" + ":"); 
+             mycross(b1,b1); 
+             System.out.println(":");
+        System.out.print( "mycross(b8,b1)" + ":"); 
+             mycross(b8,b1); 
+             System.out.println(":");
+        System.out.print( "mycross(b1,b8)" + ":"); 
+             mycross(b1,b8); 
+             System.out.println(":");
+        System.out.print( "mycross(b2,b3)" + ":"); 
+             mycross(b2,b3); 
+             System.out.println(":");
+        System.out.print( "mycross(b3,b2)" + ":"); 
+             mycross(b3,b2); 
+             System.out.println(":");
+        System.out.print( "mycross(b1,b5)" + ":"); 
+             mycross(b1,b5); 
+             System.out.println(":");
+        System.out.print( "mycross(b4,b5)" + ":"); 
+             mycross(b4,b5); 
+             System.out.println(":");
+        // new mixed tests
+        System.out.print( "mycross(r1,b1)" + ":"); 
+             mycross(r1,b1); 
+             System.out.println(":");
+        System.out.print( "mycross(b1,r1)" + ":"); 
+             mycross(b1,r1); 
+             System.out.println(":");
+        System.out.print( "mycross(s7,b4)" + ":"); 
+             mycross(s7,b4); 
+             System.out.println(":");
+        System.out.print( "mycross(b4,s7)" + ":"); 
+             mycross(b4,s7); 
+             System.out.println(":");
+        System.out.print( "mycross(r2,b8)" + ":"); 
+             mycross(r2,b8); 
+             System.out.println(":");
+        System.out.print( "mycross(b8,r2)" + ":"); 
+             mycross(b8,r2); 
+             System.out.println(":");
+        System.out.print( "mycross(r3,b2)" + ":"); 
+             mycross(r3,b2); 
+             System.out.println(":");
+        System.out.print( "mycross(b2,r3)" + ":"); 
+             mycross(b2,r3); 
+             System.out.println(":");
         countOut();
         System.exit(0);
     }
@@ -499,5 +643,38 @@ public class Main {
                 System.out.println("mycrossb oops! caught UsingIteratorPastEndException");
      }
  }
+    }
+    private static void myprint(Seq s, int num) {
+        SeqIt si = s.createSeqIt();
+        int count = 0;
+        while( ++count <= num && si.hasNext() ) {
+     try {
+                System.out.print(si.next() + " ");
+     }
+            catch (UsingIteratorPastEndException e) {
+                System.out.println("myprint oops! caught UsingIteratorPastEndException");
+     }
+        }
+    }
+    private static void mycross(Seq s1, Seq s2) {
+        SeqIt si1 = s1.createSeqIt();
+        boolean first = true;
+        while ( si1.hasNext() ) {
+     try {
+                int p1 = si1.next();
+                SeqIt si2 = s2.createSeqIt();
+                while ( si2.hasNext() ) {
+                    int p2 = si2.next();
+                    if ( first ) {
+                        first = false;
+                        System.out.println();
+                    }
+                   System.out.println("   " + p1 + " " + p2);
+                }
+     }
+            catch (UsingIteratorPastEndException e) {
+                System.out.println("mycross oops! caught UsingIteratorPastEndException");
+     }
+        }
     }
 }
