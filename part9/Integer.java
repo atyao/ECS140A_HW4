@@ -10,14 +10,14 @@ public class Integer implements AListEntry {
     @Override
     public AList expand() {
         AList temp = new AList();
-        temp.add(this);
+        temp.add(value);
         return temp;
     } // Returns self for expand
     
     @Override
     public AList flatten() {
         AList temp = new AList();
-        temp.add(this);
+        temp.add(value);
         return temp;
     } // Returns self for flatten
     

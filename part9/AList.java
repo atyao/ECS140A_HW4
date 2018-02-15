@@ -4,11 +4,19 @@ public class AList implements AListEntry{
     ArrayList<AListEntry> array = new ArrayList<AListEntry>();
     private boolean isAList = false; // Boolean to prevent flattening in expand
     
+    public void add(Seq s) {
+        array.add(s);
+    } // Adds a Sequence to the ArrayList
+    
+    public void add(AList a) {
+        array.add(a);
+    } // Adds another AList to the ArrayList
+    
     public void add(int i) {
         array.add(new Integer(i));
     } // Adds an Integer to the ArrayList
     
-    public void add(AListEntry a) {
+    private void add(AListEntry a) {
         array.add(a);
     } // Adds a For, Fib, Integer, or AList to the ArrayList
     
