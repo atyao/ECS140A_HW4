@@ -3,6 +3,12 @@
 Name(lastname, firstname): xxxx, yyyy     and CSIF loginID: zzzzz
 
     *** list students in alphabetical order by lastname
+Morales, David 	davmor95
+Nguyen, John	knguy130
+Tran, Thomas	thomast8
+Tran, Vinh	vinh543
+Win, Michael	mawin
+Yao, Andy	atyao
 
 
 *** briefly tell us what works and doesn't, e.g.,
@@ -15,8 +21,8 @@ part3: Works on all tests.
 part4: Works on all tests.
 part5: Works on all tests.
 part6: Works on all tests.
-part7: Works partially.
-part8: Did not attempt.
-part9: Did not attempt.
+part7: Works on all tests.
+part8: Works on all tests.
+part9: Works on all tests.
 
 Overall: Any comment/discussion related to this HW.
