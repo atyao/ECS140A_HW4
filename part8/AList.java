@@ -1,7 +1,7 @@
 import java.util.*; // For ArrayList
 
 public class AList{
-    ArrayList<Object> array = new ArrayList<Object>();
+    private ArrayList<Object> array = new ArrayList<Object>();
     
     public void add(Seq s) {
         array.add(s);
